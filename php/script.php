@@ -1,7 +1,8 @@
 <?php
 function Parse($link, $start_position, $end_position) {
-        $num1 = strpos($link, $start_position) + strlen($start_position);
+        $num1 = strpos($link, $start_position);
             if(!$num1) return "Error!"; 
+            else $num1  += strlen($start_position);
         $num2 = substr($link, $num1);
         return substr($link, $num1, strpos($num2, $end_position));
     }
